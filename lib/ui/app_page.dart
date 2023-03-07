@@ -20,7 +20,7 @@ class AppPage extends GetView<AppController> {
   AppPage({super.key});
 
   final chatBody = ChatBody();
-  final savedChatsBody = const SavedChatsBody();
+  final savedChatsBody = SavedChatsBody();
   final settingsBody = SettingsBody();
   final chatNameEditingController = TextEditingController();
 

@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
+import '../objectbox/entities/chat.dart';
 import '../objectbox/entities/message.dart';
 
 class AppController extends GetxController {
@@ -14,6 +15,7 @@ class AppController extends GetxController {
   final botAvatarExists = false.obs;
   final tabIndex = 0.obs;
   final RxList<Message> messages = <Message>[].obs;
+  Chat chat = Chat(name: 'empty', timestamp: 'empty', messagesJson: <String>['empty']);
 
   AppController({iAvatarPath, isUserAvatarExists, isBotAvatarExists}) {
     avatarPath.value = iAvatarPath;
