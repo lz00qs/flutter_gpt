@@ -41,9 +41,38 @@
         }
       ],
       "relations": []
+    },
+    {
+      "id": "2:2237951336271112569",
+      "lastPropertyId": "4:965704201464810134",
+      "name": "Chat",
+      "properties": [
+        {
+          "id": "1:4641524981435777084",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:7887566119022192343",
+          "name": "name",
+          "type": 9
+        },
+        {
+          "id": "3:2413186751380218019",
+          "name": "timestamp",
+          "type": 9
+        },
+        {
+          "id": "4:965704201464810134",
+          "name": "messagesJson",
+          "type": 30
+        }
+      ],
+      "relations": []
     }
   ],
-  "lastEntityId": "1:4412893571819619544",
+  "lastEntityId": "2:2237951336271112569",
   "lastIndexId": "0:0",
   "lastRelationId": "0:0",
   "lastSequenceId": "0:0",

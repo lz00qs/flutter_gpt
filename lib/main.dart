@@ -8,6 +8,8 @@ import 'package:path_provider/path_provider.dart';
 
 import 'objectbox/objectbox.dart';
 
+late ObjectBox objectbox;
+
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   final directory = await getApplicationDocumentsDirectory();
@@ -15,7 +17,7 @@ Future<void> main() async {
   final botAvatarExists = await File('${directory.path}/bot_avatar').exists();
   Get.put(
       AppController(iAvatarPath: directory.path, isUserAvatarExists: userAvatarExists,isBotAvatarExists: botAvatarExists));
-  var objectbox = await ObjectBox.create();
+  objectbox = await ObjectBox.create();
   Get.put(objectbox);
   runApp(const MyApp());
 }

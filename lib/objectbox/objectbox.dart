@@ -7,7 +7,9 @@ import 'package:path_provider/path_provider.dart';
 
 import '../objectbox.g.dart';
 import '../ui/app_controller.dart';
+import '../ui/utils.dart';
 import 'entities/app_config.dart';
+import 'entities/chat.dart';
 
 class ObjectBox extends GetxController {
   /// The Store of this app.
@@ -58,5 +60,18 @@ class ObjectBox extends GetxController {
 
   AppConfig? getConfig() {
     return store.box<AppConfig>().get(1);
+  }
+
+  int saveChat(String name, List<String> jsonList) {
+    final chat = Chat(name: name, timestamp: timeStamp(), messagesJson: jsonList);
+    return store.box<Chat>().put(chat);
+  }
+
+  bool deleteChat(Chat chat) {
+    return store.box<Chat>().remove(chat.id);
+  }
+
+  List<Chat> getSavedChats() {
+    return store.box<Chat>().getAll();
   }
 }
