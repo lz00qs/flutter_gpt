@@ -15,7 +15,7 @@ Widget chatAvatar({required bool isUser}) {
                   : const AssetImage("assets/defaultUserAvatar.webp"))
               as ImageProvider)
       : CircleAvatar(
-          backgroundImage: (controller.userAvatarExists.value
+          backgroundImage: (controller.botAvatarExists.value
                   ? FileImage(File('${controller.avatarPath}/bot_avatar'))
                   : const AssetImage("assets/defaultBotAvatar.jpeg"))
               as ImageProvider));
