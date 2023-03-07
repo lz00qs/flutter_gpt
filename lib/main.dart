@@ -1,9 +1,22 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_gpt/routes.dart';
+import 'package:flutter_gpt/ui/app_controller.dart';
 import 'package:get/get.dart';
+import 'package:path_provider/path_provider.dart';
+
+import 'objectbox/objectbox.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  final directory = await getApplicationDocumentsDirectory();
+  final userAvatarExists = await File('${directory.path}/user_avatar').exists();
+  final botAvatarExists = await File('${directory.path}/bot_avatar').exists();
+  Get.put(
+      AppController(iAvatarPath: directory.path, isUserAvatarExists: userAvatarExists,isBotAvatarExists: botAvatarExists));
+  var objectbox = await ObjectBox.create();
+  Get.put(objectbox);
   runApp(const MyApp());
 }
 
